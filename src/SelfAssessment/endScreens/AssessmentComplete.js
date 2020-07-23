@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next"
 
 import { Icons, Images } from "../../assets"
 import { AssessmentNavigationContext } from "../Context"
-import { Info } from "../Info"
+import { AssessmentLayout } from "../AssessmentLayout"
 import { InfoText } from "../InfoText"
 import { Button } from "../Button"
 
@@ -15,7 +15,7 @@ export const AssessmentComplete = () => {
   const { dismiss } = useContext(AssessmentNavigationContext)
 
   return (
-    <Info
+    <AssessmentLayout
       backgroundColor={Colors.primaryBackgroundFaintShade}
       backgroundImage={Images.EmptyPathBackground}
       icon={Icons.SelfAssessment}
@@ -25,6 +25,6 @@ export const AssessmentComplete = () => {
         title={t("assessment.complete_title")}
         description={t("assessment.complete_description")}
       />
-    </Info>
+    </AssessmentLayout>
   )
 }

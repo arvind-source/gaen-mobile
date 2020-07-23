@@ -2,7 +2,7 @@ import React from "react"
 import { useTranslation } from "react-i18next"
 import env from "react-native-config"
 
-import { Info } from "../Info"
+import { AssessmentLayout } from "../AssessmentLayout"
 import { InfoText } from "../InfoText"
 import { Button } from "../Button"
 
@@ -19,7 +19,7 @@ export const Share = ({ navigation }) => {
   const handleButtonPress = () => navigation.push("AssessmentComplete")
 
   return (
-    <Info
+    <AssessmentLayout
       icon={Icons.AnonymizedDataInverted}
       backgroundColor={Colors.invertedSecondaryBackground}
       footer={
@@ -35,6 +35,6 @@ export const Share = ({ navigation }) => {
         title={t("assessment.share_title")}
         description={t("assessment.share_description", { authority })}
       />
-    </Info>
+    </AssessmentLayout>
   )
 }

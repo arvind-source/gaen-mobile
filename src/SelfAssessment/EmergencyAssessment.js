@@ -7,7 +7,7 @@ import {
   SCREEN_TYPE_RADIO,
   SCREEN_TYPE_EMERGENCY,
 } from "./constants"
-import { Info } from "./Info"
+import { AssessmentLayout } from "./AssessmentLayout"
 import { InfoText } from "./InfoText"
 import { Button } from "./Button"
 import { RTLEnabledText } from "../components/RTLEnabledText"
@@ -30,7 +30,7 @@ export const EmergencyAssessment = ({ navigation }) => {
   }
 
   return (
-    <Info
+    <AssessmentLayout
       backgroundColor={Colors.surveyPrimaryBackground}
       footer={
         <ChoiceButtons
@@ -44,7 +44,7 @@ export const EmergencyAssessment = ({ navigation }) => {
         title={t("assessment.agree_question_text")}
         description={t("assessment.agree_question_description")}
       />
-    </Info>
+    </AssessmentLayout>
   )
 }
 

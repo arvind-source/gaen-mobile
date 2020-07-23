@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { useTranslation } from "react-i18next"
 
 import { AssessmentNavigationContext } from "../Context"
-import { Info } from "../Info"
+import { AssessmentLayout } from "../AssessmentLayout"
 import { InfoText } from "../InfoText"
 import { Button } from "../Button"
 
@@ -17,7 +17,7 @@ export const Caregiver = ({ navigation }) => {
   const handleButtonPress = () => navigation.push(completeRoute)
 
   return (
-    <Info
+    <AssessmentLayout
       backgroundColor={Colors.primaryBackgroundFaintShade}
       backgroundImage={Images.IsolatePathBackground}
       icon={Icons.Isolate}
@@ -32,6 +32,6 @@ export const Caregiver = ({ navigation }) => {
         title={t("assessment.caregiver_title")}
         description={t("assessment.caregiver_description")}
       />
-    </Info>
+    </AssessmentLayout>
   )
 }

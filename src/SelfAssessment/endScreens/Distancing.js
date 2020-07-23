@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { useTranslation } from "react-i18next"
 
 import { AssessmentNavigationContext } from "../Context"
-import { Info } from "../Info"
+import { AssessmentLayout } from "../AssessmentLayout"
 import { InfoText } from "../InfoText"
 import { Button } from "../Button"
 
@@ -17,7 +17,7 @@ export const Distancing = ({ navigation }) => {
   const handleButtonPress = () => navigation.push(completeRoute)
 
   return (
-    <Info
+    <AssessmentLayout
       backgroundColor={Colors.primaryBackgroundFaintShade}
       backgroundImage={Images.IsolatePathBackground}
       icon={Icons.Isolate}
@@ -32,6 +32,6 @@ export const Distancing = ({ navigation }) => {
         title={t("assessment.distancing_title")}
         description={t("assessment.distancing_description")}
       />
-    </Info>
+    </AssessmentLayout>
   )
 }
