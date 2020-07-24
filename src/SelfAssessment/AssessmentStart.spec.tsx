@@ -1,9 +1,15 @@
-import { render, fireEvent } from "@testing-library/react-native"
 import React from "react"
+
+import { render, fireEvent } from "@testing-library/react-native"
 import { I18nextProvider } from "react-i18next"
+import { useNavigation } from "@react-navigation/native"
 
 import i18n from "../locales/languages"
-import { AssessmentStart } from "./AssessmentStart"
+import AssessmentStart from "./AssessmentStart"
+
+const navigationSpy = jest.fn()
+jest.mock("@react-navigation/native")
+;(useNavigation as jest.Mock).mockReturnValue({ navigate: navigationSpy })
 
 describe("AssessmentStart", () => {
   it("displays the info for the assesment start", () => {
@@ -26,16 +32,14 @@ describe("AssessmentStart", () => {
   })
 
   it("navigates to the agreement screen when tapped on the cta", () => {
-    const pushSpy = jest.fn()
-    const navigation = { push: pushSpy }
     const { getByText } = render(
       <I18nextProvider i18n={i18n}>
-        <AssessmentStart navigation={navigation} />
+        <AssessmentStart />
       </I18nextProvider>,
     )
 
     fireEvent.press(getByText("Start"))
 
-    expect(pushSpy).toHaveBeenCalledWith("Agreement")
+    expect(navigationSpy).toHaveBeenCalledWith("Agreement")
   })
 })

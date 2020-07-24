@@ -8,7 +8,7 @@ import {
   SCREEN_TYPE_EMERGENCY,
 } from "./constants"
 import { Info } from "./Info"
-import { InfoText } from "./InfoText"
+import InfoText from "./InfoText"
 import { RTLEnabledText } from "../components/RTLEnabledText"
 
 import { Typography, Buttons, Colors } from "../styles"
